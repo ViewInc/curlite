@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 project(curlite)
 
+message(STATUS "..... curlite .........")
+
 # for unix platform, define install directories.
 include(GNUInstallDirs)
 
@@ -13,7 +15,9 @@ endif()
 
 
 #-----curl begin ----
+message(STATUS "-----------------------")
 message(STATUS "Looking for CURL")
+message(STATUS "-----------------------")
 include(FindCURL)
 find_package(CURL REQUIRED)
 
@@ -92,8 +96,10 @@ endif()
 
 
 if(CURLLITE_BUILD_STATIC_LIBS)
+    message(STATUS "-----------------------")
+    message(STATUS "building static lib for curlite")
+    message(STATUS "-----------------------")
 
-    message("##### building static lib #######")
 
     add_library(curlite_static STATIC ${SOURCE_FILES})
 

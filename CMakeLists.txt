@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 project(curlite)
 
-message(STATUS "..... curlite .........")
-
 # for unix platform, define install directories.
 include(GNUInstallDirs)
 
@@ -48,11 +46,13 @@ include_directories(
         ${CURL_INCLUDE_DIRS}
 )
 
-option(CURLITE_BUILD_SHARED_LIBS "build as shared library" ON)
-option(CURLLITE_BUILD_STATIC_LIBS "build as static library" OFF)
+option(CURLITE_BUILD_SHARED_LIBS "build as shared library" OFF)
+option(CURLLITE_BUILD_STATIC_LIBS "build as static library" ON)
 
 if(CURLITE_BUILD_SHARED_LIBS)
-
+    message(STATUS "-----------------------")
+    message(STATUS "curlite building shared lib")
+    message(STATUS "-----------------------")
     add_library(curlite SHARED ${SOURCE_FILES})
 
     set_target_properties(curlite PROPERTIES

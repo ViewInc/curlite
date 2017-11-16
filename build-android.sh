@@ -9,7 +9,7 @@ if [ -z "$ANDROID_NDK_HOME" ]; then
 	fi
 	ANDROID_NDK_HOME="$ANDROID_SDK_HOME/ndk-bundle"
 fi  
-	echo $ANDROID_NDK_HOME
+echo $ANDROID_NDK_HOME
 
 if [ -z "$ANDROID_NDK_HOME" ]; then
 	echo "Need to set ANDROID_NDK_HOME"

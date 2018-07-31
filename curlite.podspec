@@ -16,14 +16,14 @@ TODO: Add long description of the pod here.
   s.exclude_files = 'examples/*.cpp'
   s.public_header_files = '**/*.hpp'
   s.frameworks = 'UIKit', 'Foundation'
-  s.vendored_libraries = "$(SRCROOT)/curl/bin/ios/libcurl.a"
   s.library = 'z'
   s.ios.xcconfig = {
          'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/../../tps/curl/bin/ios"',
          'GCC_C_LANGUAGE_STANDARD' => 'c11',
          'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
          'GCC_PREPROCESSOR_DEFINITIONS' => "$(inherited)",
-         'OTHER_LDFLAGS' => '-ObjC -lcurl -lz -lstdc++'
+         'OTHER_LDFLAGS' => '-ObjC -lcurl -lz -lstdc++',
+         'HEADER_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/../../tps/curl/include/'
          }
 
 end
